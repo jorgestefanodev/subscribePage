@@ -1,18 +1,29 @@
+let email = []
+let span = document.querySelector('#span')
+
 
 const captura = () => {
     let input = document.querySelector('#email').value
-    let span = document.querySelector('#span')
+    console.log(input)
 
-   document.querySelector('#email').value = ''  
+    email.push(input)
 
-   window.location.href = 'thanks.html'
+    document.querySelector('#email').value = ''  
 
-//    span.innerHTML = `
-//         <span>${input}</span>
-//     `
+    window.location.href = 'thanks.html'
+}
+
+
+const enviarEmail = () => {
+    
+    span.innerHTML = `
+        <span>${email}</span>
+    `
 }
 
 
 const ok = () => {
     window.location.href='index.html'
 }
+
+enviarEmail()
