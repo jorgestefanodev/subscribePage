@@ -1,29 +1,26 @@
-let email = ""
 
 
-const captura = () => {
-        
-    let input = document.querySelector('#email').value
-    email = input
-    
-    document.querySelector('#email').value = ''  
+const capturaEmail = () => {
+    let input = document.querySelector("#email").value
+
+    localStorage.setItem('email', JSON.stringify(input))
 
     window.location.href = 'thanks.html'
+
+    // paginaSucesso()
 }
 
-console.log(email)
 
-const enviarEmail = () => {
-        let span = document.querySelector('#span')
+const paginaSucesso = () => {
+   
+    span = document.querySelector('#span')
 
-        span.innerHTML = `
-        <span>${email}</span>
-        `  
-    }   
-
-
-const ok = () => {
-    window.location.href='index.html'
+    span.innerHTML = `
+        <span>
+            ${localStorage.getItem('email').replace(/["]/g, '')} 
+        </span>
+    `    
 }
 
-enviarEmail()
+paginaSucesso()
+

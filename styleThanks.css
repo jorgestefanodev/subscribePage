@@ -49,6 +49,7 @@ body {
 .container p {
     font-family: Roboto, sans-serif;
     font-size: 0.8rem;
+    text-align:justify;
 }
 
 .container button {
@@ -70,4 +71,8 @@ body {
 
 .container button:active {
     transform: scale(0.98);
+}
+
+span {
+    font-weight: bold;
 }
